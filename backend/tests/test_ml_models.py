@@ -9,12 +9,23 @@ import pytest
 
 # ── Patch tldextract for environments without network access ──────────────────
 class _FakeTLDResult:
+    """
+    Simplified stand-in for tldextract.extract() — assumes a single-label TLD
+    (e.g. .com, .xyz, .net) rather than consulting a real public suffix list.
+    This is sufficient for test URLs in this file (none use multi-label
+    suffixes like .co.uk), but will misidentify those if added later.
+    """
     def __init__(self, url: str):
         host = url.split("//")[-1].split("/")[0]
         parts = host.split(".")
-        self.domain = parts[-2] if len(parts) >= 2 else host
-        self.subdomain = ".".join(parts[:-2]) if len(parts) > 2 else ""
-        self.suffix = ".".join(parts[-2:]) if len(parts) >= 2 else ""
+        if len(parts) >= 2:
+            self.suffix = parts[-1]                          # e.g. "xyz" from example.xyz
+            self.domain = parts[-2]                           # e.g. "example" from example.xyz
+            self.subdomain = ".".join(parts[:-2])              # e.g. "" or "www"
+        else:
+            self.suffix = ""
+            self.domain = host
+            self.subdomain = ""
 
 _fake = types.ModuleType("tldextract")
 _fake.extract = lambda url: _FakeTLDResult(url)
