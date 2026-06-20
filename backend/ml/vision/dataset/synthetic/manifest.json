@@ -1,0 +1,2802 @@
+[
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0000.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0001.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0002.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0003.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0004.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0005.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0006.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0007.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0008.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0009.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0010.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0011.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0012.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0013.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0014.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0015.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0016.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0017.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0018.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0019.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0020.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0021.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0022.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0023.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0024.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0025.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0026.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0027.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0028.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0029.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0030.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0031.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0032.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0033.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0034.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0035.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0036.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0037.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0038.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0039.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0040.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/paypal/paypal_0041.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0000.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0001.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0002.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0003.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0004.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0005.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0006.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0007.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0008.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0009.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0010.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0011.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0012.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0013.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0014.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0015.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0016.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0017.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0018.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0019.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0020.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0021.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0022.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0023.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0024.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0025.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0026.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0027.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0028.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0029.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0030.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0031.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0032.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0033.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0034.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0035.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0036.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0037.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0038.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0039.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0040.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/microsoft/microsoft_0041.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0000.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0001.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0002.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0003.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0004.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0005.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0006.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0007.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0008.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0009.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0010.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0011.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0012.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0013.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0014.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0015.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0016.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0017.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0018.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0019.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0020.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0021.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0022.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0023.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0024.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0025.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0026.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0027.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0028.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0029.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0030.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0031.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0032.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0033.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0034.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0035.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0036.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0037.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0038.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0039.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0040.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/apple/apple_0041.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0000.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0001.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0002.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0003.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0004.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0005.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0006.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0007.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0008.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0009.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0010.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0011.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0012.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0013.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0014.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0015.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0016.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0017.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0018.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0019.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0020.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0021.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0022.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0023.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0024.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0025.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0026.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0027.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0028.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0029.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0030.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0031.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0032.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0033.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0034.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0035.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0036.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0037.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0038.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0039.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0040.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/amazon/amazon_0041.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0000.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0001.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0002.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0003.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0004.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0005.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0006.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0007.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0008.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0009.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0010.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0011.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0012.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0013.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0014.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0015.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0016.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0017.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0018.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0019.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0020.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0021.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0022.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0023.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0024.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0025.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0026.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0027.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0028.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0029.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0030.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0031.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0032.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0033.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0034.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0035.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0036.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0037.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0038.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0039.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0040.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/facebook/facebook_0041.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0000.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0001.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0002.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0003.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0004.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0005.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0006.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0007.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0008.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0009.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0010.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0011.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0012.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0013.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0014.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0015.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0016.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0017.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0018.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0019.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0020.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0021.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0022.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0023.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0024.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0025.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0026.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0027.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0028.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0029.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0030.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0031.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0032.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0033.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0034.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0035.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0036.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0037.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0038.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0039.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0040.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/chase/chase_0041.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0000.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0001.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0002.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0003.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0004.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0005.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0006.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0007.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0008.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0009.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0010.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0011.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0012.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0013.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0014.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0015.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0016.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0017.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0018.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0019.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0020.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0021.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0022.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0023.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0024.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0025.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0026.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0027.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0028.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0029.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0030.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0031.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0032.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0033.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0034.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0035.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0036.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0037.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0038.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0039.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0040.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0041.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0042.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0043.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0044.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0045.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0046.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0047.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0048.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0049.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0050.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0051.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0052.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0053.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0054.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0055.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0056.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0057.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0058.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0059.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0060.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0061.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0062.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0063.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0064.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0065.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0066.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0067.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0068.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0069.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0070.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0071.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0072.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0073.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0074.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0075.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0076.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0077.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0078.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0079.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0080.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0081.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0082.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0083.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0084.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0085.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0086.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0087.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0088.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0089.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0090.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0091.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0092.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0093.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0094.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0095.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0096.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0097.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0098.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0099.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0100.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0101.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0102.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0103.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0104.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0105.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0106.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0107.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0108.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0109.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0110.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0111.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0112.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0113.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0114.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0115.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0116.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0117.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0118.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0119.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0120.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0121.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0122.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0123.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0124.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0125.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0126.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0127.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0128.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0129.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0130.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0131.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0132.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0133.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0134.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0135.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0136.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0137.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0138.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/train/other/legit_0139.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0000.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0001.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0002.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0003.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0004.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0005.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0006.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0007.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0008.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0009.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0010.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0011.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0012.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0013.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0014.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0015.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0016.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/paypal/paypal_0017.png",
+    "label": "paypal",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0000.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0001.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0002.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0003.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0004.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0005.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0006.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0007.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0008.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0009.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0010.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0011.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0012.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0013.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0014.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0015.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0016.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/microsoft/microsoft_0017.png",
+    "label": "microsoft",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0000.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0001.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0002.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0003.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0004.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0005.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0006.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0007.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0008.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0009.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0010.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0011.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0012.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0013.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0014.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0015.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0016.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/apple/apple_0017.png",
+    "label": "apple",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0000.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0001.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0002.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0003.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0004.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0005.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0006.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0007.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0008.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0009.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0010.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0011.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0012.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0013.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0014.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0015.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0016.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/amazon/amazon_0017.png",
+    "label": "amazon",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0000.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0001.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0002.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0003.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0004.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0005.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0006.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0007.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0008.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0009.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0010.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0011.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0012.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0013.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0014.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0015.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0016.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/facebook/facebook_0017.png",
+    "label": "facebook",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0000.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0001.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0002.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0003.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0004.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0005.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0006.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0007.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0008.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0009.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0010.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0011.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0012.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0013.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0014.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0015.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0016.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/chase/chase_0017.png",
+    "label": "chase",
+    "is_phishing": 1
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0000.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0001.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0002.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0003.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0004.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0005.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0006.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0007.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0008.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0009.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0010.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0011.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0012.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0013.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0014.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0015.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0016.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0017.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0018.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0019.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0020.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0021.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0022.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0023.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0024.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0025.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0026.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0027.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0028.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0029.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0030.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0031.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0032.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0033.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0034.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0035.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0036.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0037.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0038.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0039.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0040.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0041.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0042.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0043.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0044.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0045.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0046.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0047.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0048.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0049.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0050.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0051.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0052.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0053.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0054.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0055.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0056.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0057.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0058.png",
+    "label": "other",
+    "is_phishing": 0
+  },
+  {
+    "path": "/home/claude/sandbox-ml/backend/ml/vision/dataset/synthetic/test/other/legit_0059.png",
+    "label": "other",
+    "is_phishing": 0
+  }
+]

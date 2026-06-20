@@ -1,0 +1,65 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+*.egg
+pip-log.txt
+
+# ── ML models / data ──────────────────────────────────────────────────────────
+# NOTE: backend/ml/vision/models/phishing_resnet18.pt IS committed intentionally —
+# it's a small (43MB) trained checkpoint needed to run the vision analyzer out of
+# the box. Future retrained checkpoints in other locations are excluded by default;
+# remove the path below from this list if you want to track a new one.
+backend/models/*.pkl
+backend/models/*.joblib
+backend/models/*.pt
+backend/models/*.pth
+!backend/ml/vision/models/phishing_resnet18.pt
+*.h5
+*.hdf5
+
+# ── Node / React ──────────────────────────────────────────────────────────────
+node_modules/
+frontend/build/
+frontend/.env.local
+npm-debug.log*
+yarn-error.log*
+.npm
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+.docker/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ── Sandbox artefacts ─────────────────────────────────────────────────────────
+/tmp/sandbox-results/
+screenshots/
+results/
+
+# ── OS / editor ───────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Test / coverage ───────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
