@@ -9,7 +9,6 @@ import argparse
 import base64
 import json
 import os
-import sys
 import time
 from datetime import datetime, timezone
 

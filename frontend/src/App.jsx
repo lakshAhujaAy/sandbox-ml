@@ -280,10 +280,8 @@ function JobRow({ job, stage, active, onClick }) {
 }
 
 const STAGE_LABELS = {
-  url_nlp: "🔍 URL NLP analysis",
   sandbox: "🐳 Spinning sandbox",
-  behavior: "📊 Behavior classifier",
-  vision: "👁 Vision CNN",
+  ml_pipeline: "🧠 Running ML pipeline (URL NLP + Behavior + Vision)",
 };
 
 // ── Job detail panel ──────────────────────────────────────────────────────────
@@ -502,7 +500,7 @@ function SandboxPanel({ sandbox }) {
 
 // ── Running / loading state ───────────────────────────────────────────────────
 function RunningView({ job, stage }) {
-  const steps = ["url_nlp", "sandbox", "behavior", "vision"];
+  const steps = ["sandbox", "ml_pipeline"];
   const current = steps.indexOf(stage);
 
   return (

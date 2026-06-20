@@ -9,14 +9,13 @@ from typing import Optional, List, Dict, Any
 
 import redis.asyncio as aioredis
 
-from api.models import JobStatus, AnalysisResult
+from api.models import JobStatus
+from job_queue_service.constants import (
+    QUEUE_KEY, JOB_PREFIX, RECENT_KEY, ML_QUEUE_KEY, ML_RESULT_PREFIX
+)
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
-
-QUEUE_KEY = "sandbox:queue"
-JOB_PREFIX = "sandbox:job:"
-RECENT_KEY = "sandbox:recent"
 
 
 class JobQueue:
@@ -79,3 +78,24 @@ class JobQueue:
             if raw:
                 results.append(json.loads(raw))
         return results
+
+    # ── ML worker dispatch ───────────────────────────────────────────────────────
+    # Separate from the main job queue above: this is the contract between the
+    # orchestrator (producer) and the standalone ml-worker process (consumer).
+    # ML runs in its own container/process so the API doesn't need torch/
+    # torchvision installed and ML capacity can scale independently of API
+    # instances. See ml/worker.py for the consumer side.
+
+    async def push_ml_job(self, job_id: str, target: str, sandbox_result: Dict[str, Any]):
+        payload = {"job_id": job_id, "target": target, "sandbox": sandbox_result}
+        await self._redis.lpush(ML_QUEUE_KEY, json.dumps(payload))
+
+    async def get_ml_result(self, job_id: str) -> Optional[Dict[str, Any]]:
+        """Returns the ML result if ready, or None if the worker hasn't finished yet.
+        Consumes (deletes) the result on read so Redis doesn't accumulate stale entries."""
+        key = f"{ML_RESULT_PREFIX}{job_id}"
+        raw = await self._redis.get(key)
+        if raw is None:
+            return None
+        await self._redis.delete(key)
+        return json.loads(raw)

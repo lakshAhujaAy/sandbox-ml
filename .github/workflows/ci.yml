@@ -71,11 +71,14 @@ jobs:
       - name: Build backend API image
         run: docker build -t malsandbox-api:latest ./backend
 
+      - name: Build ML worker image
+        run: docker build -f backend/Dockerfile.ml -t malsandbox-ml-worker:latest backend/
+
       - name: Smoke test — docker compose up
         run: |
           cp .env.example .env
           docker compose up -d redis
           sleep 5
-          docker compose up -d api
-          sleep 10
+          docker compose up -d api ml-worker
+          sleep 15
           curl --retry 5 --retry-delay 3 -f http://localhost:8000/health

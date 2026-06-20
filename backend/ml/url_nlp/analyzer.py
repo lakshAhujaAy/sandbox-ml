@@ -9,7 +9,6 @@ Uses character-level n-gram TF-IDF + hand-crafted features to detect:
 """
 import math
 import re
-import string
 from typing import Dict, Any, List
 from urllib.parse import urlparse, parse_qs
 
@@ -157,7 +156,7 @@ class URLAnalyzer:
 
         # Brand impersonation
         if f["brand_mismatch"]:
-            add(0.40, f"Brand name in subdomain/path but domain doesn't match — likely spoofing")
+            add(0.40, "Brand name in subdomain/path but domain doesn't match — likely spoofing")
         elif f["brand_in_subdomain"]:
             add(0.15, "Brand keyword in subdomain")
 

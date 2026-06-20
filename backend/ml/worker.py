@@ -1,25 +1,30 @@
 """
 ml/worker.py — standalone ML worker process
-Pulls raw sandbox results from Redis, runs all 3 models, writes back scores.
-Used when ML is offloaded from the API process (e.g. GPU server).
+=============================================
+Pulls {job_id, target, sandbox} payloads pushed by sandbox/orchestrator.py
+(via JobQueue.push_ml_job), runs all 3 ML models, writes results back to
+Redis under sandbox:ml_result:{job_id} for the orchestrator to pick up.
+
+This runs as its own container (Dockerfile.ml, requirements-ml.txt — which
+includes torch/torchvision) so the main API container stays lightweight and
+doesn't need the CNN's dependencies installed. See docker-compose.yml's
+`ml-worker` service and sandbox/orchestrator.py's `_run_ml_pipeline` for the
+producer side of this contract.
 """
 import asyncio
 import json
 import os
 import signal
-import sys
 
 import redis.asyncio as aioredis
 
 from ml.url_nlp.analyzer import URLAnalyzer
 from ml.behavior.analyzer import BehaviorAnalyzer
 from ml.vision.analyzer import VisionAnalyzer
+from job_queue_service.constants import ML_QUEUE_KEY, ML_RESULT_PREFIX
 from utils.logger import get_logger
 
 logger = get_logger("ml.worker")
-
-ML_QUEUE = "sandbox:ml_queue"
-RESULT_PREFIX = "sandbox:ml_result:"
 
 
 class MLWorker:
@@ -36,7 +41,7 @@ class MLWorker:
 
         while self._running:
             try:
-                item = await r.brpop(ML_QUEUE, timeout=3)
+                item = await r.brpop(ML_QUEUE_KEY, timeout=3)
                 if item is None:
                     continue
 
@@ -60,7 +65,7 @@ class MLWorker:
                 }
 
                 await r.set(
-                    f"{RESULT_PREFIX}{job_id}",
+                    f"{ML_RESULT_PREFIX}{job_id}",
                     json.dumps(result),
                     ex=3600
                 )

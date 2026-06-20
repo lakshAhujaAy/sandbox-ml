@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import Optional, Dict, Any, List
-from pydantic import BaseModel, HttpUrl, field_validator
+from pydantic import BaseModel, field_validator
 
 
 class TargetType(str, Enum):

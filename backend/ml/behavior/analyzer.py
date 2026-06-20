@@ -108,9 +108,9 @@ class BehaviorAnalyzer:
         ]
 
         # Log-level alerts
-        alert_logs = [l for l in logs if l.get("level") == "alert"]
+        alert_logs = [entry for entry in logs if entry.get("level") == "alert"]
         password_form_detected = any(
-            "password" in l.get("message", "").lower() for l in logs
+            "password" in entry.get("message", "").lower() for entry in logs
         )
 
         return {
@@ -160,7 +160,7 @@ class BehaviorAnalyzer:
 
         # Encoded arguments (obfuscation)
         if f["encoded_argument_count"] > 0:
-            add(0.40, f"Obfuscated encoded command-line argument detected — common malware technique")
+            add(0.40, "Obfuscated encoded command-line argument detected — common malware technique")
 
         # Sensitive file writes
         if f["sensitive_write_count"] > 0:

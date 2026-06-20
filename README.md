@@ -20,25 +20,38 @@ Submit URL
     ▼
 ┌─────────────────┐     ┌──────────────────────────────────────┐
 │  Redis Queue    │────▶│   Isolated Docker Container          │
-│  (FIFO + WS)   │     │   Playwright headless Chromium        │
+│  (FIFO + WS)    │     │   Playwright headless Chromium        │
 └─────────────────┘     │   • Intercepts every network request  │
          ▲              │   • Captures process events           │
          │              │   • Detects password fields           │
          │              │   • Takes a screenshot                │
          │              │   Destroyed after execution ✓         │
          │              └──────────────┬───────────────────────┘
-         │                             │ telemetry JSON
+         │                             │ telemetry JSON, via Redis
          │              ┌──────────────▼───────────────────────┐
-         │              │         ML Pipeline                   │
+         │              │   ml-worker (separate container)      │
+         │              │   No connection to the API process —  │
+         │              │   the orchestrator pushes a job here  │
+         │              │   and polls sandbox:ml_result:{id}    │
          │              │                                       │
          │              │  ① URL NLP        score × 0.25       │
          │              │  ② Behavior       score × 0.45       │
          │              │  ③ Vision CNN     score × 0.30       │
+         │              │     (trained ResNet18)                │
          │              │                                       │
          │              │  Weighted aggregate → SAFE /          │
          └──────────────│  SUSPICIOUS / MALICIOUS              │
     WebSocket stream    └───────────────────────────────────────┘
 ```
+
+ML inference runs in its own container (`ml-worker` in `docker-compose.yml`),
+not inline in the API process. This keeps the API container lightweight — it
+never imports torch/torchvision — and means ML capacity can scale independently
+of API instances. The handoff is pure Redis: the orchestrator pushes
+`{job_id, target, sandbox}` onto `sandbox:ml_queue`; `ml-worker` consumes it,
+runs all three models, and writes the result to `sandbox:ml_result:{job_id}`,
+which the orchestrator polls for (timing out and surfacing a job error after
+`ML_TIMEOUT` seconds if the worker is down).
 
 ### The three models
 
@@ -47,6 +60,7 @@ Submit URL
 | 1 | **URL NLP** | Raw URL string | Shannon entropy, DGA domains, brand spoofing, IP-in-URL, typosquatting, redirect params |
 | 2 | **Behavior** | Sandbox telemetry | Binary downloads, C2 port connections, encoded PowerShell, process injection, sensitive file writes |
 | 3 | **Vision CNN** | Screenshot + page title | Trained ResNet18 classifies the screenshot's brand resemblance; combined with a domain-ownership check to flag impersonation. Falls back to rule-based color/keyword heuristics when no screenshot is available |
+
 
 ---
 
@@ -159,7 +173,7 @@ sandbox-ml/
 │   │   │   ├── training/train.py      # Dataset-agnostic training script
 │   │   │   ├── training/predict.py    # Standalone inference/verification script
 │   │   │   └── dataset/synthetic_generator.py  # Bootstraps a Phish-IRIS-structured dataset
-│   │   └── worker.py            # Standalone ML worker process
+│   │   └── worker.py            # ML worker process — REQUIRED, runs as its own container (see docker-compose.yml's ml-worker service); the orchestrator has no ML code of its own
 │   ├── job_queue_service/job_queue.py  # Redis FIFO queue (named to avoid colliding with stdlib `queue`)
 │   ├── tests/
 │   │   ├── conftest.py

@@ -31,9 +31,9 @@ _fake = types.ModuleType("tldextract")
 _fake.extract = lambda url: _FakeTLDResult(url)
 sys.modules.setdefault("tldextract", _fake)
 
-from ml.url_nlp.analyzer import URLAnalyzer
-from ml.behavior.analyzer import BehaviorAnalyzer
-from ml.vision.analyzer import VisionAnalyzer
+from ml.url_nlp.analyzer import URLAnalyzer  # noqa: E402 — must follow the tldextract patch above
+from ml.behavior.analyzer import BehaviorAnalyzer  # noqa: E402
+from ml.vision.analyzer import VisionAnalyzer  # noqa: E402
 
 
 # ── Fixtures ──────────────────────────────────────────────────────────────────

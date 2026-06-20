@@ -115,8 +115,8 @@ def evaluate(model, loader, device, criterion):
 
 def confusion_matrix(preds, labels, n_classes):
     cm = [[0] * n_classes for _ in range(n_classes)]
-    for p, l in zip(preds, labels):
-        cm[l][p] += 1
+    for pred, label in zip(preds, labels):
+        cm[label][pred] += 1
     return cm
 
 
@@ -124,9 +124,9 @@ def per_class_metrics(preds, labels, classes):
     """Precision/recall/F1 per class — critical for imbalanced phishing data."""
     metrics = {}
     for idx, cls in enumerate(classes):
-        tp = sum(1 for p, l in zip(preds, labels) if p == idx and l == idx)
-        fp = sum(1 for p, l in zip(preds, labels) if p == idx and l != idx)
-        fn = sum(1 for p, l in zip(preds, labels) if p != idx and l == idx)
+        tp = sum(1 for pred, label in zip(preds, labels) if pred == idx and label == idx)
+        fp = sum(1 for pred, label in zip(preds, labels) if pred == idx and label != idx)
+        fn = sum(1 for pred, label in zip(preds, labels) if pred != idx and label == idx)
 
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0

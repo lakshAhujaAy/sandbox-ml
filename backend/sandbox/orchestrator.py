@@ -6,28 +6,33 @@ Sandbox Orchestrator
 3. Executes the target URL inside a headless browser
 4. Collects network/filesystem/process logs + screenshot
 5. Destroys the container
-6. Dispatches logs to all 3 ML models
+6. Hands telemetry off to the ML worker process via Redis (does NOT run
+   ML models in-process — see _run_ml_pipeline below) and waits for results
 7. Aggregates results and stores them
+
+Architecture note: ML inference runs in a SEPARATE process (ml/worker.py,
+its own container in docker-compose.yml) rather than inline in this API
+process. This keeps the API container lightweight — it doesn't need torch/
+torchvision installed — and lets ML workers scale independently of API
+instances. The orchestrator communicates with the ML worker purely through
+Redis: push a job to `sandbox:ml_queue`, poll `sandbox:ml_result:{job_id}`
+until the worker writes a result there (or the timeout in ML_TIMEOUT elapses).
 """
 import asyncio
-import base64
 import json
 import os
 import tempfile
 import time
 from datetime import datetime
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 import docker
 from docker.errors import DockerException
 
 from api.models import (
-    AnalysisResult, JobStatus, SandboxResult, SandboxLog, ThreatLevel
+    JobStatus, ThreatLevel
 )
 from api.connection_manager import ConnectionManager
-from ml.url_nlp.analyzer import URLAnalyzer
-from ml.behavior.analyzer import BehaviorAnalyzer
-from ml.vision.analyzer import VisionAnalyzer
 from job_queue_service.job_queue import JobQueue
 from utils.logger import get_logger
 
@@ -36,6 +41,7 @@ logger = get_logger(__name__)
 SANDBOX_IMAGE = os.getenv("SANDBOX_IMAGE", "sandbox-worker:latest")
 MAX_WORKERS = int(os.getenv("MAX_WORKERS", "3"))
 ML_TIMEOUT = int(os.getenv("ML_TIMEOUT", "30"))
+ML_POLL_INTERVAL = 0.3  # seconds between result polls
 
 
 class SandboxOrchestrator:
@@ -43,11 +49,6 @@ class SandboxOrchestrator:
         self.queue = job_queue
         self.ws = ws_manager
         self._semaphore = asyncio.Semaphore(MAX_WORKERS)
-
-        # ML analyzers (loaded once, shared across jobs)
-        self.url_analyzer = URLAnalyzer()
-        self.behavior_analyzer = BehaviorAnalyzer()
-        self.vision_analyzer = VisionAnalyzer()
 
         try:
             self._docker = docker.from_env()
@@ -75,27 +76,19 @@ class SandboxOrchestrator:
             await self.queue.update(job_id, {"status": JobStatus.RUNNING})
 
             try:
-                # Step 1 — URL NLP (pre-execution, no sandbox needed)
-                await self._emit(job_id, "stage", {"stage": "url_nlp", "msg": "Analyzing URL lexical features…"})
-                url_result = await asyncio.to_thread(self.url_analyzer.analyze, target)
-
-                # Step 2 — Sandbox execution
+                # Step 1 — Sandbox execution
                 await self._emit(job_id, "stage", {"stage": "sandbox", "msg": "Spinning up isolated container…"})
                 sandbox_result = await self._run_sandbox(job_id, target)
 
-                # Step 3 — Behavior ML
-                await self._emit(job_id, "stage", {"stage": "behavior", "msg": "Running behavior classifier…"})
-                behavior_result = await asyncio.to_thread(
-                    self.behavior_analyzer.analyze, sandbox_result
-                )
+                # Step 2 — Hand off to the ML worker process for all 3 models
+                await self._emit(job_id, "stage", {"stage": "ml_pipeline", "msg": "Dispatching to ML worker…"})
+                ml_results = await self._run_ml_pipeline(job_id, target, sandbox_result)
 
-                # Step 4 — Vision ML
-                await self._emit(job_id, "stage", {"stage": "vision", "msg": "Running vision CNN on screenshot…"})
-                vision_result = await asyncio.to_thread(
-                    self.vision_analyzer.analyze, sandbox_result
-                )
+                url_result = ml_results["url_nlp"]
+                behavior_result = ml_results["behavior"]
+                vision_result = ml_results["vision"]
 
-                # Step 5 — Aggregate
+                # Step 3 — Aggregate
                 aggregate_score = self._aggregate(url_result, behavior_result, vision_result)
                 threat_level = self._score_to_level(aggregate_score)
 
@@ -127,6 +120,29 @@ class SandboxOrchestrator:
                 await self.queue.update(job_id, error_payload)
                 await self._emit(job_id, "error", error_payload)
 
+    # ── ML dispatch (delegates to the separate ml-worker process) ─────────────
+
+    async def _run_ml_pipeline(self, job_id: str, target: str, sandbox_result: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Pushes the job to the ML worker's Redis queue and polls for the result.
+        Raises TimeoutError if the worker doesn't respond within ML_TIMEOUT seconds
+        — this surfaces as a job error rather than hanging forever, which matters
+        if the ml-worker container is down or still loading the CNN checkpoint.
+        """
+        await self.queue.push_ml_job(job_id, target, sandbox_result)
+
+        deadline = time.time() + ML_TIMEOUT
+        while time.time() < deadline:
+            result = await self.queue.get_ml_result(job_id)
+            if result is not None:
+                return result
+            await asyncio.sleep(ML_POLL_INTERVAL)
+
+        raise TimeoutError(
+            f"ML worker did not respond within {ML_TIMEOUT}s — "
+            f"check that the ml-worker container is running (docker compose logs ml-worker)"
+        )
+
     # ── Sandbox execution ─────────────────────────────────────────────────────
 
     async def _run_sandbox(self, job_id: str, target: str) -> Dict[str, Any]:
@@ -142,7 +158,7 @@ class SandboxOrchestrator:
 
             try:
                 start = time.time()
-                container = await asyncio.to_thread(
+                container_output = await asyncio.to_thread(
                     self._docker.containers.run,
                     image=SANDBOX_IMAGE,
                     command=f"python /sandbox/run.py --url '{target}' --out /results/result.json",
@@ -157,6 +173,7 @@ class SandboxOrchestrator:
                     timeout=60,
                 )
                 elapsed = int((time.time() - start) * 1000)
+                logger.debug(f"Sandbox container output ({job_id}): {container_output[:500]!r}")
 
                 if os.path.exists(result_file):
                     with open(result_file) as f:
