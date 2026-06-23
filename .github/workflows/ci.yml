@@ -35,6 +35,11 @@ jobs:
           cd backend
           pytest tests/ -v --tb=short
 
+      - name: Verify evaluation report hasn't drifted from training artifacts
+        run: |
+          cd backend
+          python scripts/check_eval_report_freshness.py
+
   # ── Frontend: install + build ───────────────────────────────────────────────
   frontend:
     name: Frontend — build

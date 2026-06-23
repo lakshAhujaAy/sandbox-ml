@@ -12,11 +12,37 @@ env/
 *.egg
 pip-log.txt
 
+# ── MLflow ────────────────────────────────────────────────────────────────────
+# mlflow.log_artifact() duplicates a full copy of every logged file (model
+# checkpoints, training reports) into mlruns/<experiment>/<run_id>/artifacts/
+# for EVERY run — this duplicates what's already committed once in each
+# model's models/ directory, and grows unboundedly with every retrain.
+# backend/mlflow.db (the SQLite metadata — params, metrics, run history) IS
+# committed; the artifact file duplicates are not.
+mlruns/
+**/mlruns/
+
 # ── ML models / data ──────────────────────────────────────────────────────────
-# NOTE: backend/ml/vision/models/phishing_resnet18.pt IS committed intentionally —
-# it's a small (43MB) trained checkpoint needed to run the vision analyzer out of
-# the box. Future retrained checkpoints in other locations are excluded by default;
-# remove the path below from this list if you want to track a new one.
+# Deliberate, documented decisions about what's committed vs excluded —
+# not a blanket exclusion, since several trained checkpoints ARE meant to
+# ship with the repo so it runs out of the box without retraining first.
+#
+# COMMITTED (small enough, needed for out-of-the-box inference):
+#   backend/ml/vision/models/phishing_resnet18.pt        (43MB)
+#   backend/ml/url_nlp/models/url_nlp_xgboost.joblib     (580KB, the DEFAULT model)
+#   backend/ml/behavior/models/behavior_random_forest.joblib  (224KB, the default)
+#   backend/ml/behavior/models/behavior_xgboost.joblib   (136KB)
+#   backend/mlflow.db                                     (840KB, real training run history)
+#
+# EXCLUDED (too large relative to the accuracy gain over the committed alternative):
+#   backend/ml/url_nlp/models/url_nlp_random_forest.joblib (59MB vs XGBoost's
+#     580KB, for a 0.35 percentage-point accuracy difference — see
+#     ml/url_nlp/analyzer.py's DEFAULT_MODEL_PATH comment and TRAINING_NOTES.md)
+backend/ml/url_nlp/models/url_nlp_random_forest.joblib
+
+# General patterns for any FUTURE model files not explicitly allow-listed above —
+# review and add an explicit `!path/to/file` exception (like the vision one)
+# if a new checkpoint should ship with the repo.
 backend/models/*.pkl
 backend/models/*.joblib
 backend/models/*.pt

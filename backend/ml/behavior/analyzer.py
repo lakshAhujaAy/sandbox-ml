@@ -1,15 +1,27 @@
 """
 ML Model 2 — Behavior / Anomaly Classifier
 ===========================================
-Processes sandbox logs (network requests, process events, file operations)
-and scores them against a rule-based + statistical model.
+Primary path: a Random Forest trained on SYNTHETIC sandbox telemetry (see
+ml/behavior/dataset/synthetic_telemetry_generator.py for full honesty notes
+— no public dataset of raw sandbox telemetry traces exists, so this was
+bootstrapped from behavioral archetypes grounded in named MITRE ATT&CK
+techniques, not real malware execution). Achieves 100% test accuracy on
+this synthetic data, which reflects how cleanly separable the synthetic
+archetypes are, not real-world performance — see
+ml/behavior/models/training_report_random_forest.json and
+ml/behavior/TRAINING_NOTES.md for the full honest writeup, including a
+documented false-positive edge case (a single benign IP-literal request
+scores 78.7% malicious, because the synthetic data never included a benign
+example of that pattern).
 
-In production this would be a trained Random Forest / XGBoost model
-fed with feature vectors from sandbox telemetry. Here we implement the
-full feature-engineering pipeline and a weighted rule classifier that
-mirrors what a trained model learns.
+Fallback path: the original hand-crafted rule-based heuristics below — used
+when the trained model or its dependencies (scikit-learn, joblib, pandas)
+aren't available, so the analyzer never hard-fails just because a model
+file is missing.
 """
+import os
 import re
+from pathlib import Path
 from typing import Dict, Any, List
 
 
@@ -34,15 +46,69 @@ SUSPICIOUS_PROCESSES = {
 
 ENCODED_ARG_PATTERN = re.compile(r'-enc(odedcommand)?[\s]+[A-Za-z0-9+/=]{20,}', re.IGNORECASE)
 
+DEFAULT_MODEL_PATH = Path(__file__).parent / "models" / "behavior_random_forest.joblib"
+
 
 class BehaviorAnalyzer:
     """
-    Feature vector extraction + weighted rule classifier over sandbox telemetry.
+    Feature vector extraction + classifier (trained model primary, rule-based
+    fallback) over sandbox telemetry.
     """
+
+    def __init__(self, model_path: str = None):
+        self._model = None
+        self._feature_columns: List[str] = []
+        self._load_model(model_path or str(DEFAULT_MODEL_PATH))
+
+    def _load_model(self, model_path: str):
+        """Attempt to load the trained Random Forest. Silently no-ops if
+        scikit-learn/joblib aren't installed or the checkpoint is missing —
+        the analyzer degrades to rule-based scoring in that case."""
+        if not os.path.exists(model_path):
+            return
+        try:
+            import joblib
+            bundle = joblib.load(model_path)
+            self._model = bundle["model"]
+            self._feature_columns = bundle["feature_columns"]
+        except Exception:
+            self._model = None
+            self._feature_columns = []
+
+    def _model_predict(self, features: Dict[str, Any]):
+        """Runs the trained Random Forest on already-extracted features.
+        Returns the malicious-class probability, or None if unavailable."""
+        if self._model is None:
+            return None
+        try:
+            import pandas as pd
+            numeric = {
+                k: (int(v) if isinstance(v, bool) else v)
+                for k, v in features.items()
+                if not isinstance(v, list)
+            }
+            ordered = {col: numeric.get(col, 0) for col in self._feature_columns}
+            X = pd.DataFrame([ordered])[self._feature_columns]
+            proba = self._model.predict_proba(X)[0]
+            return float(proba[1])  # class 1 = malicious
+        except Exception:
+            return None
 
     def analyze(self, sandbox: Dict[str, Any]) -> Dict[str, Any]:
         features = self._extract_features(sandbox)
-        score, reasoning = self._classify(features)
+        model_score = self._model_predict(features)
+
+        if model_score is not None:
+            score = model_score
+            _, reasoning = self._classify(features)  # human-readable signals, even when score comes from the model
+            reasoning = [r for r in reasoning if r != "No anomalous behavior patterns detected in sandbox telemetry"]
+            reasoning.insert(0, f"Random Forest (trained on synthetic telemetry): {score*100:.1f}% malicious probability")
+            if not reasoning[1:]:
+                reasoning.append("No specific rule-based indicators triggered, but model flagged this pattern")
+            model_source = "random_forest"
+        else:
+            score, reasoning = self._classify(features)
+            model_source = "rule_based_fallback"
 
         threat_level = "safe"
         if score >= 0.70:
@@ -52,6 +118,7 @@ class BehaviorAnalyzer:
 
         return {
             "model": "behavior",
+            "model_source": model_source,
             "score": round(score, 4),
             "confidence": round(min(0.55 + len(reasoning) * 0.07, 0.97), 4),
             "threat_level": threat_level,

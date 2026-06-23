@@ -1,0 +1,116 @@
+{
+  "model_type": "xgboost",
+  "dataset_source": "synthetic (bootstrap) \u2014 see synthetic_telemetry_generator.py docstring",
+  "n_features": 11,
+  "feature_columns": [
+    "network_request_count",
+    "unique_host_count",
+    "binary_download_count",
+    "suspicious_port_count",
+    "ip_connection_count",
+    "suspicious_process_count",
+    "encoded_argument_count",
+    "child_process_count",
+    "sensitive_write_count",
+    "alert_log_count",
+    "password_form_detected"
+  ],
+  "n_train_samples": 640,
+  "n_test_samples": 160,
+  "params": {
+    "n_estimators": 150,
+    "max_depth": 5,
+    "learning_rate": 0.1,
+    "scale_pos_weight": 1.0,
+    "random_state": 42,
+    "eval_metric": "logloss"
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0
+  },
+  "confusion_matrix": [
+    [
+      80,
+      0
+    ],
+    [
+      0,
+      80
+    ]
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 80.0
+    },
+    "1": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 80.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 160.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 160.0
+    }
+  },
+  "feature_importance": {
+    "unique_host_count": 0.5251588821411133,
+    "ip_connection_count": 0.185791477560997,
+    "binary_download_count": 0.18206286430358887,
+    "suspicious_process_count": 0.10119535028934479,
+    "network_request_count": 0.0029122717678546906,
+    "password_form_detected": 0.0027849941980093718,
+    "child_process_count": 9.418229456059635e-05,
+    "suspicious_port_count": 0.0,
+    "encoded_argument_count": 0.0,
+    "sensitive_write_count": 0.0,
+    "alert_log_count": 0.0
+  },
+  "per_archetype_accuracy": {
+    "persistence_mechanism": {
+      "n_samples": 21,
+      "accuracy": 1.0
+    },
+    "legitimate_login_page": {
+      "n_samples": 41,
+      "accuracy": 1.0
+    },
+    "c2_beaconing": {
+      "n_samples": 16,
+      "accuracy": 1.0
+    },
+    "normal_page_load": {
+      "n_samples": 39,
+      "accuracy": 1.0
+    },
+    "credential_harvester": {
+      "n_samples": 14,
+      "accuracy": 1.0
+    },
+    "powershell_dropper": {
+      "n_samples": 14,
+      "accuracy": 1.0
+    },
+    "drive_by_download": {
+      "n_samples": 15,
+      "accuracy": 1.0
+    }
+  },
+  "train_time_seconds": 0.05052065849304199
+}

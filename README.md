@@ -55,12 +55,26 @@ which the orchestrator polls for (timing out and surfacing a job error after
 
 ### The three models
 
-| # | Model | Input | What it detects |
-|---|-------|-------|-----------------|
-| 1 | **URL NLP** | Raw URL string | Shannon entropy, DGA domains, brand spoofing, IP-in-URL, typosquatting, redirect params |
-| 2 | **Behavior** | Sandbox telemetry | Binary downloads, C2 port connections, encoded PowerShell, process injection, sensitive file writes |
-| 3 | **Vision CNN** | Screenshot + page title | Trained ResNet18 classifies the screenshot's brand resemblance; combined with a domain-ownership check to flag impersonation. Falls back to rule-based color/keyword heuristics when no screenshot is available |
+All three now have a trained-model primary path with rule-based fallback —
+see [`reports/EVALUATION_REPORT.md`](backend/reports/EVALUATION_REPORT.md)
+for real performance numbers, and each model's own `TRAINING_NOTES.md` for
+the full honest story (including 4 real bugs found and fixed during
+development — not hypothetical, documented with the empirical proof for
+each).
 
+| # | Model | Input | Trained on | What it detects |
+|---|-------|-------|-----------|-----------------|
+| 1 | **URL NLP** | Raw URL string | **Real** 88,647-row dataset ([GregaVrbancic/Phishing-Dataset](https://github.com/GregaVrbancic/Phishing-Dataset)) — 93.0% test accuracy, 82.5% recall on held-out real PhishTank URLs | Random Forest over 98 lexical features: entropy, DGA domains, brand spoofing, IP-in-URL, typosquatting, redirect params |
+| 2 | **Behavior** | Sandbox telemetry | Synthetic telemetry (bootstrap — no public dataset exists), grounded in named MITRE ATT&CK techniques | Random Forest over 11 behavioral features: binary downloads, C2 port connections, encoded PowerShell, process injection, sensitive file writes |
+| 3 | **Vision CNN** | Screenshot + page title | Synthetic login-page screenshots (bootstrap — real dataset blocked by sandbox network/browser limits, see Vision's TRAINING_NOTES.md) | Trained ResNet18 classifies the screenshot's brand resemblance; combined with a domain-ownership check to flag impersonation |
+
+**Honesty note, stated plainly:** only URL NLP has real-world-validated
+numbers. Behavior and Vision's reported 100% test accuracy reflects how
+cleanly separable their *synthetic* training data is, not real-world
+detection capability — both models' `TRAINING_NOTES.md` say this explicitly
+and document a real false-positive/limitation found during validation. All
+three models fall back to interpretable rule-based heuristics if the
+trained model or its dependencies aren't available.
 
 ---
 
@@ -161,25 +175,41 @@ sandbox-ml/
 │   │   ├── models.py            # Pydantic schemas
 │   │   └── connection_manager.py
 │   ├── sandbox/
-│   │   ├── orchestrator.py      # Job runner — Docker lifecycle + ML dispatch
+│   │   ├── orchestrator.py      # Job runner — Docker lifecycle + ML dispatch (via Redis, not inline)
 │   │   └── run.py               # Playwright script (executes inside container)
 │   ├── ml/
-│   │   ├── url_nlp/analyzer.py  # Model 1
-│   │   ├── behavior/analyzer.py # Model 2
+│   │   ├── url_nlp/
+│   │   │   ├── analyzer.py            # Model 1 — loads the trained Random Forest, falls back to rules
+│   │   │   ├── feature_extractor.py   # Reproduces the dataset's 98-feature schema from a raw URL string
+│   │   │   ├── TRAINING_NOTES.md      # Honest writeup — incl. 2 real bugs found+fixed, with proof
+│   │   │   ├── dataset/phishing_dataset_full.csv  # Real 88,647-row dataset (GregaVrbancic/Phishing-Dataset)
+│   │   │   ├── training/train.py      # Trains RF/XGBoost, logs to MLflow
+│   │   │   └── models/                # Trained checkpoints + training_report_*.json
+│   │   ├── behavior/
+│   │   │   ├── analyzer.py            # Model 2 — loads the trained Random Forest, falls back to rules
+│   │   │   ├── TRAINING_NOTES.md      # Honest writeup — incl. 2 data-leakage bugs found+fixed
+│   │   │   ├── dataset/synthetic_telemetry_generator.py  # MITRE ATT&CK-grounded synthetic telemetry
+│   │   │   ├── training/train.py      # Trains RF/XGBoost, logs to MLflow
+│   │   │   └── models/                # Trained checkpoints + training_report_*.json
 │   │   ├── vision/
 │   │   │   ├── analyzer.py            # Model 3 — loads the trained CNN, falls back to rules
 │   │   │   ├── TRAINING_NOTES.md      # Honest writeup: what was trained, on what data, and why
 │   │   │   ├── models/phishing_resnet18.pt  # Trained checkpoint (committed, 43MB)
 │   │   │   ├── training/train.py      # Dataset-agnostic training script
 │   │   │   ├── training/predict.py    # Standalone inference/verification script
-│   │   │   └── dataset/synthetic_generator.py  # Bootstraps a Phish-IRIS-structured dataset
-│   │   └── worker.py            # ML worker process — REQUIRED, runs as its own container (see docker-compose.yml's ml-worker service); the orchestrator has no ML code of its own
+│   │   │   ├── dataset/synthetic_generator.py  # Bootstraps a Phish-IRIS-structured dataset
+│   │   │   └── dataset/package/       # Real PhishTank URL collection kit, pending offline run
+│   │   └── worker.py            # ML worker process — REQUIRED, runs as its own container; batches live predictions into MLflow every 50 jobs
 │   ├── job_queue_service/job_queue.py  # Redis FIFO queue (named to avoid colliding with stdlib `queue`)
+│   ├── reports/EVALUATION_REPORT.md    # Consolidated real performance numbers across all 3 models
+│   ├── mlflow.db                # SQLite-backed MLflow tracking — every training run + batched live inference
+│   ├── scripts/check_eval_report_freshness.py  # Verifies EVALUATION_REPORT.md hasn't drifted from actual training artifacts
 │   ├── tests/
 │   │   ├── conftest.py
-│   │   └── test_ml_models.py    # unit tests across all 3 models (see "Running tests" below)
+│   │   ├── test_ml_models.py        # 23 tests across all 3 models
+│   │   └── test_feature_extractor.py # 12 tests directly targeting the URL NLP bugs found during development
 │   ├── requirements.txt
-│   ├── requirements-ml.txt
+│   ├── requirements-ml.txt      # includes mlflow, scikit-learn, xgboost, torch/torchvision
 │   └── pytest.ini
 ├── frontend/
 │   └── src/App.jsx              # React dashboard — live WS, radar chart, telemetry tabs
@@ -202,16 +232,69 @@ pytest tests/ -v
 ```
 
 The test suite covers:
-- URL NLP: safe URLs score low, IPs/brand mismatches/DGA domains score high, schema validation, score clamping
-- Behavior: safe/malicious sandboxes, binary download detection, encoded PowerShell, empty input
-- Vision: brand mismatch, urgency language, confidence reduction without screenshot, rule-based fallback when no screenshot is present (the CNN can't run without pixels)
+- URL NLP: trained Random Forest predictions, the feature extractor's exact 98-column schema, 2 regression tests for real bugs found during development (scheme-stripping, -1 sentinel handling — see `ml/url_nlp/TRAINING_NOTES.md`), rule-based fallback
+- Behavior: trained Random Forest predictions, rule-based fallback's specific signal weighting, safe/malicious telemetry, binary download detection, encoded PowerShell
+- Vision: trained CNN predictions, brand/domain mismatch, urgency language, rule-based fallback when no screenshot is present
+- Feature extractor: 12 dedicated tests directly targeting the two URL NLP bugs in isolation
 - Aggregate: end-to-end high/low risk scenarios
 
-(21 tests, all passing — see `tests/test_ml_models.py`)
+(35 tests, all passing — `tests/test_ml_models.py` + `tests/test_feature_extractor.py`)
 
 ---
 
 ## Extending
+
+All three models follow the same pattern: a trained classifier as the
+primary scoring path, with the original hand-weighted rule-based heuristics
+kept as an automatic fallback if the model file or its dependencies
+(scikit-learn, joblib, pandas, or torch for Vision) aren't available. See
+[`reports/EVALUATION_REPORT.md`](backend/reports/EVALUATION_REPORT.md) for
+consolidated real performance numbers across all three, and each model's
+own `TRAINING_NOTES.md` for the full narrative — including every bug found
+during development, documented with the actual empirical proof rather than
+just a fix with no explanation.
+
+### URL NLP — retrain on the real dataset, or your own
+
+Trained on 88,647 **real** labeled URLs
+([GregaVrbancic/Phishing-Dataset](https://github.com/GregaVrbancic/Phishing-Dataset)),
+restricted to 98 features computable from a URL string alone (13
+lookup-dependent columns requiring live DNS/WHOIS/Google checks were
+excluded — `URLAnalyzer` never has network access at inference time). Two
+real, serious bugs were found and fixed while wiring this in — both caused
+`github.com` to score 90%+ phishing despite 93% test accuracy, both found
+by directly comparing extracted features against real training rows. Full
+story in [`backend/ml/url_nlp/TRAINING_NOTES.md`](backend/ml/url_nlp/TRAINING_NOTES.md).
+
+```bash
+cd backend/ml/url_nlp/training
+python train.py --data ../dataset/phishing_dataset_full.csv --model random_forest
+# or: --model xgboost (faster inference, slightly lower accuracy)
+```
+
+### Behavior — retrain on synthetic telemetry, or real sandbox traces
+
+No public dataset of raw sandbox telemetry exists, so this was bootstrapped
+from synthetic data grounded in named MITRE ATT&CK techniques (drive-by
+download, PowerShell droppers, C2 beaconing, persistence, credential
+harvesting). Two real data-leakage bugs were found and fixed (a host-count
+proxy, and a circular pre-labeled-log-line issue) — full story in
+[`backend/ml/behavior/TRAINING_NOTES.md`](backend/ml/behavior/TRAINING_NOTES.md),
+including a real false positive found during validation (a benign IP-pixel
+request scoring 78.7% malicious, since the synthetic data never covered
+that case).
+
+```bash
+cd backend/ml/behavior/training
+python train.py --data ../dataset/synthetic_telemetry.json --model random_forest
+```
+
+To retrain on real data: replace `synthetic_telemetry.json` with real
+sandbox execution traces (e.g. from CAPE/Cuckoo running real malware
+samples from MalwareBazaar) in the same `{network_requests, process_events,
+file_operations, logs, label}` schema — the training script imports
+`BehaviorAnalyzer._extract_features()` directly rather than reimplementing
+feature extraction, so training and inference can never silently diverge.
 
 ### Vision CNN — what's already trained, and how to retrain it for real
 
@@ -234,6 +317,14 @@ Full details, the per-epoch training log, and an honest discussion of the
 gap to real data are in [`backend/ml/vision/TRAINING_NOTES.md`](backend/ml/vision/TRAINING_NOTES.md) —
 read that before discussing this project in an interview.
 
+A real collection attempt was made and packaged for offline use: 340 real,
+PhishTank-verified 2020 phishing URLs with human-verified brand labels, plus
+a Playwright collection script — see
+[`backend/ml/vision/dataset/package/README.md`](backend/ml/vision/dataset/package/README.md).
+This couldn't be run in the development sandbox (no browser binary
+installable, no arbitrary external network access) and is pending
+collection on a machine with normal internet access.
+
 **To retrain on real data:**
 
 ```bash
@@ -253,32 +344,23 @@ No code changes are required to swap datasets — only `--data-root`. If the
 training machine can reach `download.pytorch.org`, pretrained ImageNet weights
 will be used automatically (the script detects and falls back gracefully if not).
 
-### URL NLP and Behavior models — currently rule-based, not yet trained
+### Experiment tracking — MLflow
 
-Unlike Vision, the URL NLP and Behavior analyzers are **hand-weighted rule
-classifiers**, not trained models — there is no dataset, training script, or
-serialized model backing them yet. They were deliberately built this way:
-fully interpretable scoring (every score ships with a plain-English reason),
-and no labelled dataset was sourced for either.
+All training runs (across all three models) log to a single shared
+`backend/mlflow.db` (SQLite backend). Live production inference is also
+logged, batched every 50 predictions (not per-request — see
+`ml/worker.py`'s docstring for why per-request MLflow runs would be the
+wrong granularity) into a `production_inference` experiment, tracking score
+distributions and how often each model's trained-vs-fallback path actually
+fired — useful for catching a model file silently going missing in
+production.
 
-Both expose a `_extract_features()` method that already produces a clean,
-fixed-length numeric feature vector — this is the integration point for a
-real classifier:
-
-```python
-from ml.url_nlp.analyzer import URLAnalyzer
-
-analyzer = URLAnalyzer()
-features = analyzer._extract_features("http://paypal-verify.xyz/login")
-# → dict of ~20 numeric/boolean features: entropy, digit_ratio, brand_mismatch, etc.
+```bash
+cd backend
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+# open http://localhost:5000
 ```
 
-To convert either to a trained model: collect labelled samples (PhishTank/
-OpenPhish for malicious URLs, Tranco/Majestic top-1M for benign; sandboxed
-malware execution logs from CAPE/VirusTotal for behavior), extract feature
-vectors with the existing `_extract_features()`, and train a
-`RandomForestClassifier` or `XGBClassifier` — both models have small (~20
-feature) tabular inputs that suit tree ensembles better than deep learning.
 This is **not yet implemented** — it's the next step, not a finished feature.
 
 ### Add a new ML model

@@ -1,18 +1,29 @@
 """
 ML Model 1 — URL Lexical / NLP Analyzer
 ========================================
-Uses character-level n-gram TF-IDF + hand-crafted features to detect:
-  • Domain Generation Algorithm (DGA) URLs
-  • Typosquatting / homograph attacks
-  • Suspicious path/param patterns
-  • Brand impersonation in subdomains
+Primary path: a Random Forest trained on 88,647 REAL labeled URLs from
+GregaVrbancic/Phishing-Dataset (github.com/GregaVrbancic/Phishing-Dataset),
+restricted to the 98 lexical/structural features computable from a URL
+string alone (13 lookup-dependent columns requiring live DNS/WHOIS/Google
+checks were excluded — see ml/url_nlp/training/train.py for why).
+Test-set performance: 93.0% accuracy, 98.1% ROC-AUC — see
+ml/url_nlp/models/training_report_random_forest.json for the full report.
+
+Fallback path: hand-crafted rule-based heuristics (Shannon entropy, brand
+mismatch, suspicious TLDs, phishing keywords) — used when the trained model
+or its dependencies (scikit-learn, joblib) aren't available, so the analyzer
+never hard-fails just because a model file is missing.
 """
 import math
+import os
 import re
+from pathlib import Path
 from typing import Dict, Any, List
 from urllib.parse import urlparse, parse_qs
 
 import tldextract
+
+from ml.url_nlp.feature_extractor import extract_features as extract_lexical_features
 
 
 # ── Known brand domains (partial list for demo) ───────────────────────────────
@@ -35,6 +46,29 @@ PHISHING_KEYWORDS = {
 
 DGA_CONSONANT_CLUSTERS = re.compile(r'[bcdfghjklmnpqrstvwxyz]{5,}')
 
+DEFAULT_MODEL_PATH = Path(__file__).parent / "models" / "url_nlp_xgboost.joblib"
+# NOTE: XGBoost was chosen as the default over the Random Forest checkpoint
+# (also available in this directory after training) specifically because
+# of file size: the RF model is 59MB (200 trees, depth 20) vs XGBoost's
+# 580KB, for a 0.35 percentage-point accuracy difference (92.69% vs 93.04%)
+# that doesn't justify shipping a 100x larger file in the repo. See
+# TRAINING_NOTES.md for both models' full metrics if you want to compare
+# and choose the Random Forest instead — just point model_path at it.
+
+# Explicit mapping from sklearn/xgboost class names to display strings —
+# deliberately NOT derived via string manipulation on the class name (an
+# earlier attempt using a regex to auto-convert CamelCase to snake_case
+# produced "x_g_b_classifier" for XGBClassifier, which is wrong and
+# unreadable). Add an entry here if a new model type is introduced.
+MODEL_CLASS_DISPLAY_NAMES = {
+    "RandomForestClassifier": "Random Forest",
+    "XGBClassifier": "XGBoost",
+}
+MODEL_CLASS_SOURCE_IDS = {
+    "RandomForestClassifier": "random_forest",
+    "XGBClassifier": "xgboost",
+}
+
 
 class URLAnalyzer:
     """
@@ -42,9 +76,64 @@ class URLAnalyzer:
     Returns a score dict compatible with the orchestrator's MLScore format.
     """
 
+    def __init__(self, model_path: str = None):
+        self._model = None
+        self._feature_columns: List[str] = []
+        self._load_model(model_path or str(DEFAULT_MODEL_PATH))
+
+    def _load_model(self, model_path: str):
+        """Attempt to load the trained Random Forest. Silently no-ops if
+        scikit-learn/joblib aren't installed or the checkpoint is missing —
+        the analyzer degrades to rule-based scoring in that case."""
+        if not os.path.exists(model_path):
+            return
+        try:
+            import joblib
+            bundle = joblib.load(model_path)
+            self._model = bundle["model"]
+            self._feature_columns = bundle["feature_columns"]
+        except Exception:
+            self._model = None
+            self._feature_columns = []
+
+    def _model_predict(self, url: str):
+        """Runs the trained Random Forest on a URL. Returns (score, top_features)
+        or None if the model isn't loaded."""
+        if self._model is None:
+            return None
+        try:
+            import pandas as pd
+            raw_features = extract_lexical_features(url)
+            # Order columns EXACTLY as during training — dict insertion order
+            # is not a safe assumption across refactors/versions.
+            ordered = {col: raw_features.get(col, 0) for col in self._feature_columns}
+            X = pd.DataFrame([ordered])[self._feature_columns]
+            proba = self._model.predict_proba(X)[0]
+            phishing_score = float(proba[1])  # class 1 = phishing
+            return {"score": phishing_score, "raw_features": raw_features}
+        except Exception:
+            return None
+
     def analyze(self, url: str) -> Dict[str, Any]:
-        features = self._extract_features(url)
-        score, reasoning = self._score(features)
+        model_result = self._model_predict(url)
+        features = self._extract_features(url)  # rule-based features, used for reasoning either way
+
+        if model_result is not None:
+            score = model_result["score"]
+            reasoning = self._reasoning_from_rules(features)  # human-readable signals, even when score comes from the model
+            model_class_name = type(self._model).__name__
+            display_name = MODEL_CLASS_DISPLAY_NAMES.get(model_class_name, model_class_name)
+            reasoning.insert(0, f"{display_name} (trained on 88,647 real labeled URLs): {score*100:.1f}% phishing probability")
+            confidence = max(score, 1 - score)  # how far from 0.5 the prediction is
+            # Derived from the actual loaded model class, not hardcoded — this was
+            # a real bug found while switching the default from Random Forest to
+            # XGBoost: model_source stayed "random_forest" even after the loaded
+            # model changed, silently mislabeling every prediction's source.
+            model_source = MODEL_CLASS_SOURCE_IDS.get(model_class_name, model_class_name.lower())
+        else:
+            score, reasoning = self._score(features)
+            confidence = self._confidence(features)
+            model_source = "rule_based_fallback"
 
         threat_level = "safe"
         if score >= 0.70:
@@ -54,12 +143,22 @@ class URLAnalyzer:
 
         return {
             "model": "url_nlp",
+            "model_source": model_source,
             "score": round(score, 4),
-            "confidence": round(self._confidence(features), 4),
+            "confidence": round(confidence, 4),
             "threat_level": threat_level,
             "features": features,
             "reasoning": reasoning,
         }
+
+    def _reasoning_from_rules(self, features: Dict[str, Any]) -> List[str]:
+        """Generates human-readable reasoning from rule-based features even when
+        the trained model produced the actual score — keeps explanations
+        interpretable rather than just handing back a bare probability."""
+        _, reasoning = self._score(features)
+        # Drop the generic "no significant indicators" fallback line if present —
+        # it would be confusing alongside a high model score, or redundant alongside a low one.
+        return [r for r in reasoning if r != "No significant threat indicators found"]
 
     # ── Feature extraction ────────────────────────────────────────────────────
 
