@@ -21,8 +21,8 @@ from pathlib import Path
 from typing import Dict, Any, List
 from urllib.parse import urlparse, parse_qs
 
-import tldextract
 
+from ml.url_nlp.tld import extract as tld_extract
 from ml.url_nlp.feature_extractor import extract_features as extract_lexical_features
 
 
@@ -168,7 +168,7 @@ class URLAnalyzer:
             url = "http://" + url
 
         parsed = urlparse(url)
-        ext = tldextract.extract(url)
+        ext = tld_extract(url)
 
         domain = ext.domain.lower()
         subdomain = ext.subdomain.lower()

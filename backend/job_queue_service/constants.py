@@ -17,3 +17,4 @@ RECENT_KEY = "sandbox:recent"
 # ML dispatch queue (orchestrator <-> ml-worker)
 ML_QUEUE_KEY = "sandbox:ml_queue"
 ML_RESULT_PREFIX = "sandbox:ml_result:"
+WORKER_STATUS_KEY = "sandbox:ml_worker_status"  # JSON written by ml/worker.py, 15s TTL

@@ -6,12 +6,29 @@ captures network traffic, page title, screenshot, and process events,
 then writes a structured JSON result to --out.
 """
 import argparse
+import ipaddress
+import socket
+from urllib.parse import urlparse
 import base64
 import json
 import os
 import sys
 import time
 from datetime import datetime, timezone
+
+
+def _is_public(host: str) -> bool:
+    """False for loopback/private/link-local/reserved targets (SSRF guard)."""
+    try:
+        for info in socket.getaddrinfo(host, None):
+            ip = ipaddress.ip_address(info[4][0])
+            if ip.version == 6 and ip.ipv4_mapped:
+                ip = ip.ipv4_mapped
+            if not ip.is_global:
+                return False
+    except socket.gaierror:
+        return True  # unresolvable: nothing internal to reach
+    return True
 
 
 def run(url: str, out_path: str):
@@ -87,6 +104,15 @@ def run(url: str, out_path: str):
                         req_entry["status"] = resp.status
                         req_entry["content_type"] = ct
 
+            def guard(route):
+                host = urlparse(route.request.url).hostname or ""
+                if host and not _is_public(host):
+                    log("alert", "network", f"Blocked request to non-public address: {host}")
+                    route.abort()
+                else:
+                    route.continue_()
+
+            context.route("**/*", guard)
             page = context.new_page()
             page.on("request", on_request)
             page.on("response", on_response)
@@ -125,8 +151,10 @@ def run(url: str, out_path: str):
             browser.close()
 
     except ImportError:
+        result["error"] = "Playwright is not installed"
         log("warn", "process", "Playwright not available — partial analysis only")
     except Exception as e:
+        result["error"] = str(e)[:300]
         log("alert", "process", f"Sandbox execution error: {e}")
 
     result["execution_ms"] = int((time.time() - start) * 1000)

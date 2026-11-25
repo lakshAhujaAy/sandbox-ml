@@ -3,6 +3,28 @@
 All notable changes to this project will be documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.1.0] — Unreleased
+
+### Added — run it from a permanent URL instead of localhost
+- Root `Dockerfile`: one image/one port with the dashboard, API, Redis, ML worker
+  and headless Chromium. Deploy guide in `DEPLOY.md`.
+- `SANDBOX_MODE=subprocess`: runs the Playwright sandbox inside the container, so
+  no Docker socket is needed (required by most hosts). A failed run fails the job;
+  it never falls back to simulated telemetry in this mode.
+- Hosted-mode protections: only public http(s) targets are accepted, the sandbox
+  browser blocks requests to private/internal addresses, optional shared password
+  (`BASIC_AUTH_PASSWORD`).
+- `/health` reports whether the ML worker is up and which trained models actually
+  loaded; the dashboard shows it. `scripts/smoke_test.py` checks a live deployment.
+- Dashboard is same-origin by default and polls for results if WebSockets are blocked.
+
+### Fixed
+- `requirements-ml.txt` pinned scikit-learn 1.4.2 but the committed models were
+  pickled with 1.9.0; pins now match.
+- `tldextract` no longer downloads its suffix list at runtime (bundled snapshot).
+- The queue loop survives transient Redis errors instead of dying silently.
+- CI lint rule set is pinned (unpinned `ruff` started failing on new default rules).
+
 ## [2.0.0] — 2026-06-22
 
 ### Added — real datasets, training pipelines, experiment tracking

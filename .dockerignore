@@ -1,0 +1,11 @@
+.git
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/mlruns
+frontend/build
+backend/ml/vision/dataset/synthetic
+backend/ml/url_nlp/dataset
+backend/ml/url_nlp/models/url_nlp_random_forest.joblib
+*.patch
+*.tar.gz

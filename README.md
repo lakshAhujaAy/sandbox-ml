@@ -95,6 +95,17 @@ bash scripts/start.sh
 | API | http://localhost:8000 |
 | API docs | http://localhost:8000/docs |
 
+### Run it from a permanent URL (no localhost)
+
+The root `Dockerfile` packages the whole system, including all three trained
+models, into one container. See [DEPLOY.md](DEPLOY.md) for hosting options,
+settings and security notes.
+
+```bash
+docker build -t malsandbox . && docker run -p 7860:7860 -e BASIC_AUTH_PASSWORD=pick-one malsandbox
+python scripts/smoke_test.py http://localhost:7860 --password pick-one
+```
+
 ### Local dev (no Docker)
 
 ```bash

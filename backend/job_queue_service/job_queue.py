@@ -11,7 +11,7 @@ import redis.asyncio as aioredis
 
 from api.models import JobStatus
 from job_queue_service.constants import (
-    QUEUE_KEY, JOB_PREFIX, RECENT_KEY, ML_QUEUE_KEY, ML_RESULT_PREFIX
+    QUEUE_KEY, JOB_PREFIX, RECENT_KEY, ML_QUEUE_KEY, ML_RESULT_PREFIX, WORKER_STATUS_KEY
 )
 from utils.logger import get_logger
 
@@ -99,3 +99,8 @@ class JobQueue:
             return None
         await self._redis.delete(key)
         return json.loads(raw)
+
+    async def get_worker_status(self) -> Optional[Dict[str, Any]]:
+        """Latest heartbeat from the ML worker, or None if it is down (key expires after 15s)."""
+        raw = await self._redis.get(WORKER_STATUS_KEY)
+        return json.loads(raw) if raw else None

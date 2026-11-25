@@ -61,6 +61,28 @@ jobs:
           npm install
           npm run build
 
+  # ── Hosted image: build it, run it, prove all three trained models score a real job ──
+  deploy-image:
+    name: Deployment image — build + smoke test
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the single-container image
+        run: docker build -t malsandbox .
+      - name: Run it
+        run: docker run -d --name ms -p 7860:7860 malsandbox
+      - name: Wait for the ML worker, then smoke-test
+        run: |
+          for i in $(seq 1 40); do
+            curl -sf localhost:7860/health | grep -q '"ml_worker":"up"' && break
+            sleep 5
+          done
+          python scripts/smoke_test.py http://localhost:7860 --target https://example.com
+      - name: Container logs on failure
+        if: failure()
+        run: docker logs ms | tail -80
+
   # ── Docker: build both images ───────────────────────────────────────────────
   docker:
     name: Docker — build images

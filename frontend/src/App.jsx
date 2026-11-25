@@ -10,8 +10,11 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell
 } from "recharts";
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:8000";
-const WS_URL = process.env.REACT_APP_WS_URL || "ws://localhost:8000";
+// Same-origin by default, so the hosted build needs no configuration.
+// docker-compose.yml sets both explicitly for local development.
+const API = process.env.REACT_APP_API_URL ?? "";
+const WS_URL = process.env.REACT_APP_WS_URL ??
+  `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}`;
 
 // ── Threat colour map ─────────────────────────────────────────────────────────
 const THREAT = {
@@ -38,6 +41,14 @@ export default function App() {
   const [liveLog, setLiveLog]     = useState([]);
   const wsRef = useRef(null);
   const logRef = useRef(null);
+  const [health, setHealth] = useState(null);
+
+  useEffect(() => {
+    const load = () => fetch(`${API}/health`).then(r => r.json()).then(setHealth).catch(() => setHealth(null));
+    load();
+    const t = setInterval(load, 10000);
+    return () => clearInterval(t);
+  }, []);
 
   // ── Fetch recent jobs on mount ────────────────────────────────────────────
   useEffect(() => {
@@ -114,6 +125,22 @@ export default function App() {
         text: `Job queued: ${t}`,
         level: "info",
       }]);
+      // Polling fallback: some hosts/proxies drop WebSockets, results must still arrive.
+      (async () => {
+        for (let i = 0; i < 90; i++) {
+          await new Promise(r => setTimeout(r, 2000));
+          try {
+            const d = await (await fetch(`${API}/jobs/${job.job_id}`)).json();
+            if (d.status === "done" || d.status === "error") {
+              setJobs(prev => prev.map(j => j.job_id === job.job_id ? d : j));
+              setSelected(s => (s && s.job_id === job.job_id ? d : s));
+              setIsLoading(false);
+              return;
+            }
+          } catch { /* keep polling */ }
+        }
+        setIsLoading(false);
+      })();
     } catch {
       setIsLoading(false);
     }
@@ -131,7 +158,14 @@ export default function App() {
           <p style={{ margin: 0, fontSize: 12, color: "#64748b" }}>Dynamic analysis · URL NLP · Behavior · Vision CNN</p>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
-          <Chip color="#22c55e">Live</Chip>
+          <Chip color={health?.ml_worker === "up" ? "#22c55e" : "#ef4444"}>
+            {health ? `ML worker ${health.ml_worker}` : "API unreachable"}
+          </Chip>
+          {health?.models && (
+            <Chip color={Object.values(health.models).every(Boolean) ? "#22c55e" : "#f59e0b"}>
+              {Object.values(health.models).every(Boolean) ? "Trained models loaded" : "Rule-based fallback active"}
+            </Chip>
+          )}
           <Chip color="#6366f1">3 Models</Chip>
         </div>
       </header>

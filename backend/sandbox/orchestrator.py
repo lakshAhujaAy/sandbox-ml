@@ -21,6 +21,7 @@ until the worker writes a result there (or the timeout in ML_TIMEOUT elapses).
 import asyncio
 import json
 import os
+import sys
 import tempfile
 import time
 from datetime import datetime
@@ -41,6 +42,9 @@ logger = get_logger(__name__)
 SANDBOX_IMAGE = os.getenv("SANDBOX_IMAGE", "sandbox-worker:latest")
 MAX_WORKERS = int(os.getenv("MAX_WORKERS", "3"))
 ML_TIMEOUT = int(os.getenv("ML_TIMEOUT", "30"))
+SANDBOX_MODE = os.getenv("SANDBOX_MODE", "docker").lower()  # "docker" | "subprocess"
+SANDBOX_TIMEOUT = int(os.getenv("SANDBOX_TIMEOUT", "45"))
+SANDBOX_RUNNER = os.getenv("SANDBOX_RUNNER", os.path.join(os.path.dirname(__file__), "run.py"))
 ML_POLL_INTERVAL = 0.3  # seconds between result polls
 
 
@@ -61,7 +65,12 @@ class SandboxOrchestrator:
     async def run_forever(self):
         logger.info("Orchestrator loop started")
         while True:
-            job = await self.queue.pop(timeout=2)
+            try:
+                job = await self.queue.pop(timeout=2)
+            except Exception as exc:  # transient Redis error: back off instead of killing the loop for good
+                logger.warning(f"Queue pop failed ({exc}); retrying in 2s")
+                await asyncio.sleep(2)
+                continue
             if job:
                 asyncio.create_task(self._handle_job(job))
 
@@ -150,8 +159,13 @@ class SandboxOrchestrator:
         Run target in an isolated Docker container with a headless browser.
         Falls back to a rich simulation if Docker is unavailable.
         """
+        if SANDBOX_MODE == "subprocess":
+            return await self._run_subprocess(target)
+
         if self._docker is None:
-            return await asyncio.to_thread(self._simulate_sandbox, target)
+            data = await asyncio.to_thread(self._simulate_sandbox, target)
+            data["sandbox_mode"] = "simulated"
+            return data
 
         with tempfile.TemporaryDirectory() as tmpdir:
             result_file = os.path.join(tmpdir, "result.json")
@@ -179,12 +193,43 @@ class SandboxOrchestrator:
                     with open(result_file) as f:
                         data = json.load(f)
                     data["execution_ms"] = elapsed
+                    data["sandbox_mode"] = "docker"
                     return data
 
             except Exception as e:
                 logger.warning(f"Container execution failed ({e}), using simulation")
 
         return await asyncio.to_thread(self._simulate_sandbox, target)
+
+    async def _run_subprocess(self, target: str) -> Dict[str, Any]:
+        """
+        Hosted mode: run the Playwright runner as a short-lived child process inside
+        THIS container (no Docker socket needed). The container is the isolation
+        boundary, so deploy it on a throwaway host. Never falls back to simulated
+        telemetry: a failed run is a failed job, not a fake "benign" verdict.
+        """
+        with tempfile.TemporaryDirectory() as tmpdir:
+            out = os.path.join(tmpdir, "result.json")
+            start = time.time()
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, SANDBOX_RUNNER, "--url", target, "--out", out,
+                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.STDOUT,
+            )
+            try:
+                output, _ = await asyncio.wait_for(proc.communicate(), timeout=SANDBOX_TIMEOUT)
+            except asyncio.TimeoutError:
+                proc.kill()
+                await proc.wait()
+                raise RuntimeError(f"Sandbox timed out after {SANDBOX_TIMEOUT}s")
+            if not os.path.exists(out):
+                raise RuntimeError("Sandbox produced no result: " + output[-300:].decode(errors="replace"))
+            with open(out) as f:
+                data = json.load(f)
+        if data.get("error"):
+            raise RuntimeError(f"Sandbox could not analyze the page: {data['error']}")
+        data["execution_ms"] = int((time.time() - start) * 1000)
+        data["sandbox_mode"] = "subprocess"
+        return data
 
     def _simulate_sandbox(self, target: str) -> Dict[str, Any]:
         """

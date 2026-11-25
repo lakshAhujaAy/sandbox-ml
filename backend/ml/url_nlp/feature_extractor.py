@@ -26,7 +26,7 @@ which only ever has a raw URL string at inference time.
 import re
 from typing import Dict
 from urllib.parse import urlparse
-import tldextract
+from ml.url_nlp.tld import extract as tld_extract
 
 
 CHAR_FEATURES = [
@@ -113,7 +113,7 @@ def extract_features(url: str) -> Dict[str, float]:
 
     # ── URL-level character counts + length + TLD count (always present) ────
     features.update(_char_counts(full_url, "url"))
-    features["qty_tld_url"] = len(tldextract.extract(full_url).suffix.split(".")) if tldextract.extract(full_url).suffix else 0
+    features["qty_tld_url"] = len(tld_extract(full_url).suffix.split(".")) if tld_extract(full_url).suffix else 0
     features["length_url"] = len(full_url)
 
     # ── Domain-level character counts + extras (always present) ─────────────

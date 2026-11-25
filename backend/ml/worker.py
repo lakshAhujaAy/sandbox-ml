@@ -36,7 +36,7 @@ import redis.asyncio as aioredis
 from ml.url_nlp.analyzer import URLAnalyzer
 from ml.behavior.analyzer import BehaviorAnalyzer
 from ml.vision.analyzer import VisionAnalyzer
-from job_queue_service.constants import ML_QUEUE_KEY, ML_RESULT_PREFIX
+from job_queue_service.constants import ML_QUEUE_KEY, ML_RESULT_PREFIX, WORKER_STATUS_KEY
 from utils.logger import get_logger
 
 logger = get_logger("ml.worker")
@@ -108,6 +108,13 @@ class MLWorker:
 
         while self._running:
             try:
+                # Heartbeat doubles as a model-load report, so a silent fallback to
+                # rule-based scoring (missing dependency, bad checkpoint) shows up in /health.
+                await r.set(WORKER_STATUS_KEY, json.dumps({
+                    "url_nlp": self.url_analyzer._model is not None,
+                    "behavior": self.behavior_analyzer._model is not None,
+                    "vision": self.vision_analyzer._cnn is not None,
+                }), ex=15)
                 item = await r.brpop(ML_QUEUE_KEY, timeout=3)
                 if item is None:
                     continue
